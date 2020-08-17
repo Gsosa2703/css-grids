@@ -7,6 +7,9 @@ body{
     grid-template-rows: [inicio] 200px [linea2]200px [linea3]200px [linea4]200px [final];
     grid-gap: 5px;
     height: 100vh;
+    /* grid-auto-flow: column;
+    grid-auto-columns: 50px 100px; */
+    grid-auto-rows: 50px 100px;
 
 }
 
