@@ -1,11 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challemge Movie.es</title>
 </head>
-<body>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: 60px 1fr;
+        grid-template-columns: 80px 1fr;
+        height: 120vh;
+        grid-template-areas: "header header"
+            "nav-bar movie-container";
+
+    }
+
+    .header {
+        display: grid;
+        background: white;
+        padding: 10px 15px;
+        grid-area: header;
+        -webkit-box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        -moz-box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        grid-template-columns: 220px 1fr 200px;
+        grid-column-gap: 30px;
+        justify-content: center;
+    }
+
+    .img-header {
+        width: 120px;
+        height: 80%;
+
+    }
+
+    .character {
+        display: flex;
+    }
+
+    .header input {
+        width: 100%;
+        font-size: 16px;
+        height: 30px;
+        border: solid 1px #ccc6c6;
+        border-radius: 5px;
+    }
+
+    .character p {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .img-character {
+        width: 50px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 10px;
+
+
+    }
+
+    .nav-bar {
+        padding: 15px;
+        grid-area: nav-bar;
+        background: #ee5757;
+        display: grid;
+        grid-template-rows: 100px 100px 100px 1fr;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .nav-bar a:last-child {
+        align-items: end;
+        align-self: end;
+    }
+
+    .nav-bar a {
+        font-family: Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+
+    }
+
+    .nav-bar img {
+        max-width: 40px;
+    }
+
+    .movie-container {
+        padding: 20px;
+        grid-area: movie-container;
+    }
+
+    .movies{
+        display: grid;
+    grid-template-rows: 50px 1fr;
+    grid-row-gap: 20px;
+    }    
+
+    .movies p{
+        font-weight: bold;
+        font-size: 22px;
+    }
+    .list-movies {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 350px));
+        grid-gap: 28px;
+        justify-content: space-evenly;
+    }
+
+    .movie {
+        position: relative;
+        display: block;
+    }
+
     
+
+    .movie-image {
+        margin: 0;
+    }
+
+    .movie img {
+        width: 100%;
+        vertical-align: top;
+    }
+
+    .movie-overlay {
+        padding: 10px;
+        color: white;
+        background: rgba(192, 19, 54, 0.63);
+        position: absolute;
+        top: 45%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .movie-overlay p {
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .movie-overlay h3 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .list-movies {
+        grid-gap: 10px;
+  
+    }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="logo.png" alt="" class="img-header">
+            <input type="text" placeholder="Busca tu peli, actor, actriz o director favorito">
+            <div class="character">
+                <p>Bambi Rodriguez </p>
+                <img src="bambi.jpg" alt="" class="img-character">
+            </div>
+        </header>
+        <nav class="nav-bar">
+
+            <a href=""> <img src="home.png" alt=""><br> Home</a>
+
+            <a href=""> <img src="trending.png" alt=""><br> Trending</a>
+
+            <a href=""> <img src="heart.png" alt=""><br> Most likes</a>
+
+            <a href=""> <img src="settings.png" alt=""><br> Settings</a>
+
+        </nav>
+        <div class="movie-container">
+        
+            <div class="movies">
+                <p>Ahora en el cine</p>
+                <div class="list-movies">
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="movies">
+                <p>Aclamadas por la critica</p>
+                <div class="list-movies">
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="movies">
+                <p>No te puedes perder</p>
+                <div class="list-movies">
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                    <a href="" class="movie">
+                        <figure class="movie-image">
+                            <img src="bambi.jpg" alt="">
+                        </figure>
+                        <div class="movie-overlay">
+                            <h3>The secret life of Pets</h3>
+                            <p class="post-likes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+                                recusandae quae esse ratione beatae voluptatibus!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
