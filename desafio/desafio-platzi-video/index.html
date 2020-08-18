@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 150vh;
+        grid-template-areas: "navbar container-video"
+            "navbar container-comments";
+    }
+
+    .navbar {
+        padding: 30px 20px;
+        grid-area: navbar;
+        background: #200b47;
+        color: white;
+    }
+
+    .navbar h1 {
+        font-size: 35px;
+        font-family: 'Russo One', sans-serif;
+        font-weight: lighter;
+
+    }
+
+    .video-title {
+        background: linear-gradient(red, pink);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .navbar ol li {
+        list-style-position: outside;
+
+        padding-bottom: 10px;
+    }
+
+    .playlist-friends a {
+        display: grid;
+        grid-template-columns: 50px 150px;
+        grid-column-gap: 20px;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .playlist-friends img {
+        width: 50px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+    .container-video {
+        grid-area: container-video;
+    }
+
+    .container-comments {
+        grid-area: container-comments;
+        display: grid;
+        grid-template-columns: 1fr 350px;
+    }
+
+    .video {
+        height: 75%;
+        background-image: url("../desafio-movies_es/video.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .content-video {
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 25%;
+        -webkit-box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        -moz-box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+    }
+
+    .content-video h3 {
+        margin: 0;
+        padding-top: 15px;
+        font-weight: lighter;
+
+    }
+
+    .content-video p {
+        color: #bebebe;
+        font-size: 19px;
+        margin: 0px;
+    }
+
+    .buttons{
+        margin-top: 10px;
+        align-items: center;
+    display: grid;
+    grid-template-columns: 200px repeat(6, 100px);
+    grid-column-gap: 15px;
+    }
+    .button1 {
+        width: 150px;
+        background: linear-gradient(to right, red, pink);
+        border: none;
+        border-radius: 5px;
+        height: 40px;
+        padding: 5px 5px;
+        color: white;
+        font-size: 17px;
+    }
+
+    .button-send{
+        border: none;
+        background: white;
+        font-size: 16px;
+    }
+
+    .button2, .button3, .button4, .button5{
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        padding: 5px 10px;
+        width: 100px;
+        color:white;
+    }
+    .button2{
+        background: #985faf;
+    }
+    .button3{
+        background: #54f0e8;
+    }
+    .button4{
+        background: #940909;
+    }
+    .button5{
+        background: #ca2b9b;
+    }
+
+    .container-comments h4{
+        font-weight: lighter;
+        font-size: 18px;
+    }
+    .comments, .suggestions{
+        padding: 30px 30px;
+
+    }
+    .input-img{
+        padding: 10px;
+        padding-right: 0;
+        display: flex;
+        width: 80%;
+        height: 30px;
+        background: #f1f1f1;
+        border-radius: 5px;
+        border-bottom: solid 1px rgba(159, 151, 151, 0.21);
+
+    }
+
+    .input-img input{
+        font-size: 17px;
+        padding-left: 10px;
+        border: none;
+        background: #f1f1f1;
+        width: 80%;
+    
+        
+    }
+    .input-img img{
+        width: 40px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .comment-item{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .comment-item img{
+        width: 50px;
+        height: 40px;
+        border-radius: 50%;
+
+    }
+    .comment-item p{
+       padding-left: 10px;
+       font-size: 18px;
+
+    }
+
+    .suggestions-item img{
+        max-width: 250px;
+        -webkit-box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        -moz-box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+        box-shadow: -1px 9px 16px -7px rgba(138, 138, 138, 1);
+    }
+    .suggestions-item p{
+        font-size: 16px;
+        color: #6d6c6c;
+    }
+
+</style>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar">
+            <h1>Platzi <span class="video-title">Video</span> </h1>
+            <h4>My Playlist</h4>
+            <ol>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, atque.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                <li>Lorem ipsum dolor sit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, atque.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+                <li>Lorem ipsum dolor sit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ol>
+            <h4>Friends Playlists</h4>
+            <div class="playlist-friends">
+                <a href=""> <img src="../desafio-movies_es/bambi.jpg" alt=""> <span> Gordon Carrol </span></a>
+                <a href=""> <img src="../desafio-movies_es/bambi.jpg" alt=""> Gabriela Sosa</a>
+                <a href=""> <img src="../desafio-movies_es/bambi.jpg" alt=""> Veronica Mendez</a>
+            </div>
+        </nav>
+        <div class="container-video">
+
+            <div class="video"></div>
+            <div class="content-video">
+                <h3>New Order - Bizarre Love Triangle </h3>
+                <p>123,444 visitas</p>
+                <div class="buttons">
+                    <button type="submit" class="button1">Agregar a mi lista</button>
+                    <button class="button-send">&#10150; <br> Share</button>
+                    <button class="button-send">☁ <br> Save</button>
+                    <button class="button2">Electronic</button>
+                    <button class="button3">Rock</button>
+                    <button class="button4">80</button>
+                    <button class="button5">Relaj</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-comments">
+            <div class="comments">
+                <h4>Comments</h4>
+                <div class="input-img">
+                    <span><img src="../desafio-movies_es/bambi.jpg" alt=""></span>
+                    <input type="text" placeholder="Add a comment">
+                </div>
+
+                <div class="comment-item">
+                    <span><img src="../desafio-movies_es/bambi.jpg" alt=""></span>
+                    <p>Gabriela Sosa <br> Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                <div class="comment-item">
+                    <span><img src="../desafio-movies_es/bambi.jpg" alt=""></span>
+                    <p>Gabriela Sosa <br> Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                <div class="comment-item">
+                    <span><img src="../desafio-movies_es/bambi.jpg" alt=""></span>
+                    <p>Gabriela Sosa <br> Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                <div class="comment-item">
+                    <span><img src="../desafio-movies_es/bambi.jpg" alt=""></span>
+                    <p>Gabriela Sosa <br> Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+                <div class="comment-item">
+                    <span><img src="../desafio-movies_es/bambi.jpg" alt=""></span>
+                    <p>Gabriela Sosa <br> Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                </div>
+
+            </div>
+            <div class="suggestions">
+                <h4>Suggestions</h4>
+                <div class="suggestions-item">
+                    <img src="../desafio-movies_es/bambi.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tenetur eaque minima obcaecati quos cum.</p>
+                </div>
+                <div class="suggestions-item">
+                    <img src="../desafio-movies_es/bambi.jpg" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tenetur eaque minima obcaecati quos cum.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -63,6 +63,7 @@
         height: 40px;
         border-radius: 50%;
         margin-left: 10px;
+        border-bottom: solid 1px #817e7e;
 
 
     }
@@ -158,10 +159,17 @@
         margin-bottom: 10px;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 768px) {
         .list-movies {
         grid-gap: 10px;
   
+    }
+    .character p {
+        display: none;
+    }
+    .header{
+        grid-template-columns: 150px 1fr 100px;
+
     }
     }
 </style>
